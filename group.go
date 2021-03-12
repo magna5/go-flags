@@ -256,11 +256,6 @@ func (g *Group) scanStruct(realval reflect.Value, sfield *reflect.StructField, h
 		longname := mtag.Get("long")
 		shortname := mtag.Get("short")
 
-		// Need at least either a short or long name
-		if longname == "" && shortname == "" && mtag.Get("ini-name") == "" {
-			continue
-		}
-
 		short := rune(0)
 		rc := utf8.RuneCountInString(shortname)
 
